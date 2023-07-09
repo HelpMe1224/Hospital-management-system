@@ -3,7 +3,7 @@ from Patient import Patient
  
 class Admin:
     """A class that deals with the Admin operations"""
-    def __init__(self, username, password, address = ''):
+    def __init__(self, username, password, address):
         """
         Args:
             username (string): Username
@@ -11,8 +11,8 @@ class Admin:
             address (string, optional): Address Defaults to ''
         """
  
-        self.__username = "username"
-        self.__password = "password"
+        self.__username = username
+        self.__password = password
         self.__address =  address
  
     def view(self,a_list):
@@ -221,7 +221,7 @@ class Admin:
         patient_index = input('Please enter the patient ID: ')
  
         try:
-            # patient_index is the patient ID mines one (-1)
+            # patient_index is the patient ID minus one (-1)
             patient_index = int(patient_index) -1
  
             # check if the id is not in the list of patients
@@ -247,15 +247,15 @@ class Admin:
             doctor_index = int(doctor_index) -1
  
             # check if the id is in the list of doctors
-            if self.find_index(doctor_index,doctors)!=False:
-                    
+            
+            if doctor_index in range(len(doctors)):
                 # link the patients to the doctor and vice versa
                 #ToDo11
-                doctors[doctor_index].add_patient(patients[patient_index]) 
+                
                 patients[patient_index].link(doctors[doctor_index].full_name())
                 pass
                 
-                print('The patient is now assign to the doctor.')
+                print(f'The patient is now assign to the doctor')
  
             # if the id is not in the list of doctors
             else:
@@ -324,14 +324,14 @@ class Admin:
             pass
  
         elif op == 2:
-            password = input('Enter the new password: ')
+            new_password = input('Enter the new password: ')
             # validate the password
-            if password == input('Enter the new password again: '):
-                self.__password = password
+            if new_password == input('Enter the new password again: '):
+                self.__password = new_password
  
         elif op == 3:
             #ToDo15
-            new_address= input("Enter the new address")
+            new_address= input("Enter the new address: ")
             self.address = new_address
             print("New address updated sucessfully.")
             pass

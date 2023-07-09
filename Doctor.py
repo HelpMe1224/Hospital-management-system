@@ -44,8 +44,8 @@ class Doctor:
         #ToDo7
         self.__speciality = new_speciality
  
-    def add_patient(self, patient):
-        self.patients.append(patient)
+    def add_patient(self, patients):
+        self.patient.append(patients)
  
     def __str__(self) :
         return f'{self.full_name():^30}|{self.__speciality:^15}'

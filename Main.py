@@ -7,9 +7,10 @@ def main():
     """
     the main function to be ran when the program runs
     """
+ 
 
     # Initialising the actors
-    admin = Admin('admin','123','B1 1AB') # username is 'admin', password is '123'
+    admin = Admin('1','1','B1 1AB') # username is 'admin', password is '123'
     doctors = [Doctor('John','Smith','Internal Med.'), Doctor('Jone','Smith','Pediatrics'), Doctor('Jone','Carlos','Cardiology')]
     patients = [Patient('Sara','Smith', 20, '07012345678','B1 234'), Patient('Mike','Jones', 37,'07555551234','L2 2AB'), Patient('Daivd','Smith', 15, '07123456789','C1 ABC')]
     discharged_patients = []
